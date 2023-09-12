@@ -245,16 +245,16 @@ end
 
 Just a sneak peek as to why `.each` is so important to get comfortable with: soon, you'll be embedding Ruby loops in your web applications to create dynamic, data-driven pages with code that looks something like this:
 
-```html
-  <% newsfeed_photos.each do |the_photo| %>
-    <div class="card">
-      <img src="<%= the_photo.image_source %>">
+```erb
+<% newsfeed_photos.each do |the_photo| %>
+  <div class="card">
+    <img src="<%= the_photo.image_source %>">
 
-      <p>
-        <%= the_photo.caption %>
-      </p>
-    </div>
-  <% end %>
+    <p>
+      <%= the_photo.caption %>
+    </p>
+  </div>
+<% end %>
 ```
 
 Code like this is what drives the dozens of dynamic applications you interact with on a daily basis — we pull a list of records from a database table, then we loop over them, and then we format each one using some _markup language_ (in this case HTML for the browser, but it could be XML for native apps, etc).
