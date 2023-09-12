@@ -247,7 +247,7 @@ Just a sneak peek as to why `.each` is so important to get comfortable with: soo
 
 ```erb
 <% newsfeed_photos.each do |the_photo| %>
-  <div class="card">
+  <div>
     <img src="<%= the_photo.image_source %>">
 
     <p>
