@@ -245,7 +245,7 @@ end
 
 Just a sneak peek as to why `.each` is so important to get comfortable with: soon, you'll be embedding Ruby loops in your web applications to create dynamic, data-driven pages with code that looks something like this:
 
-```erb
+```html
   <% newsfeed_photos.each do |the_photo| %>
     <div class="card">
       <img src="<%= the_photo.image_source %>">
