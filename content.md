@@ -79,7 +79,7 @@ Nice! `.each` has two clear benefits over using `.times`:
 
      Then, **we just use that variable directly**, and we don't have to worry about accessing the array with `.at`.
 
-<aside markdown="1">
+<aside>
 I like to name the variables that contain arrays _plurally_ (e.g. `photos`), and block variables _singularly_ (e.g. `photo`) to make it clear to myself which is which — the list itself versus one element within the list. Whatever you do, don't name the block variable plurally — that's very confusing when you come back to your code later and have to make sense of it.
 </aside>
 
@@ -266,6 +266,3 @@ That's it for `.each` and loops. It's time to meet a very important data structu
 - Approximately how long (in minutes) did this lesson take you to complete?
 {: .free_text_number #time_taken title="Time taken" points="1" answer="any" }
 
-<span style="font-size: large">**When you are done here, close the window and return to Canvas for the next lesson in the series.**</span>
-
-----
