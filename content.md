@@ -85,7 +85,7 @@ I like to name the variables that contain arrays _plurally_ (e.g. `photos`), and
 
 The hardest part, I think, is getting your head around the block variable; in this case, `|the_word|`. It takes some practice.
 
-Try to remember that it's just a name that _we make up_, and `.each` takes care of putting each element in that variable for us behind the scenes. I could have called it `zebra` if I wanted to; there's nothing special about the name — in particular, it doesn't have to match the name of the variable containing the array. Just try to pick something descriptive of an individual element in the list.
+Try to remember that it's just a name that _we make up_, and `.each` takes care of putting each element in that variable for us behind the scenes. I could have called it `zebra` if I wanted to; there's nothing special about the name of the variable — in particular, it doesn't have to match the name of the variable containing the array (`words`). Just try to pick something descriptive of an individual element in the list.
 
 ## Practice using each
 
