@@ -113,7 +113,7 @@ Note: be sure to use `pp` to print the output (do not use `p` or `puts`; alterna
 word = ["Ruby", "application", "zebra"].sample
 # write your program here
 ```
-{: .repl #spelling title="Spelling" readonly_lines="[1]"}
+{: .repl #spelling title="Spelling" readonly_lines="[1]" points="1"}
 
 ```ruby
 describe "Spelling" do
@@ -149,7 +149,7 @@ Note: be sure to use `pp` to print the output (do not use `p` or `puts`; alterna
 list_of_words = ["zebra", "giraffe", "monkey", "salmon"]
 # write your program here
 ```
-{: .repl #even_words title="Even words" readonly_lines="[1]"}
+{: .repl #even_words title="Even words" readonly_lines="[1]" points="1"}
 
 ```ruby
 describe "Even words" do
@@ -205,7 +205,7 @@ Note: be sure to use `pp` to print the output (do not use `p` or `puts`; alterna
 word = ["photo", "like", "commenter"].sample
 # write your program here
 ```
-{: .repl #letter_count title="Letter count" readonly_lines="[1]"}
+{: .repl #letter_count title="Letter count" readonly_lines="[1]" points="1"}
 
 ```ruby
 describe "Letter count" do
