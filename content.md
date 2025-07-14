@@ -105,9 +105,7 @@ Write a program that, given a randomly `sample`d `word` from the list, spells it
 "A"
 ```
 
-Hint: recall, `.split("")` will separate a `String` into an `Array` of characters.
-
-Note: be sure to use `pp` to print the output (do not use `p` or `puts`; alternative printing methods).
+Hint: recall, `.split("")` will separate a `String` into an `Array` of characters, so you can write `word.split("").each ...` to start your program.
 
 ```ruby
 word = ["Ruby", "application", "zebra"].sample
