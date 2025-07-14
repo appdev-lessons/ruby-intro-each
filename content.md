@@ -24,7 +24,7 @@ Therefore, the most common reason we'll have to write loops is to **visit each e
 ```ruby
 # test your knowledge
 ```
-{: .repl #testing_arrays title="Test runnable code block"}
+{: .codeblock #testing_arrays title="Test runnable code block"}
 
 ## Iterating over arrays with Integer's times method
 
@@ -40,7 +40,7 @@ number_of_words.times do |the_index|
   pp words.at(the_index).upcase
 end
 ```
-{: .repl #three_forms_times title="Three forms with times" points="1"}
+{: .codeblock #three_forms_times title="Three forms with times" points="1"}
 
 You see that I chose to use `.times` for this job.
 
@@ -64,7 +64,7 @@ words.each do |the_word|
   pp the_word.upcase
 end
 ```
-{: .repl #three_forms_each title="Three forms with each" points="1"}
+{: .codeblock #three_forms_each title="Three forms with each" points="1"}
 
 Click "Run" and verify that both programs do the same thing.
 
@@ -113,24 +113,18 @@ Note: be sure to use `pp` to print the output (do not use `p` or `puts`; alterna
 word = ["Ruby", "application", "zebra"].sample
 # write your program here
 ```
-{: .repl #spelling title="Spelling" readonly_lines="[1]" points="1"}
+{: .codeblock #spelling title="Spelling" readonly_lines="[1]" points="1"}
 
 ```ruby
 describe "Spelling" do
   it "should print ''S' 'U' 'P' 'E' 'R'' if the input is 'Super'" do
-    path = "/tmp/code.rb"
-
-    # specify a word
-    file = File.read(path)
-    new_content = file.split("\n")
-    new_content = new_content.map { |line| line == 'word = ["Ruby", "application", "zebra"].sample' ? 'word = "Super"' : line }.join("\n")
-    File.open(path, 'w') { |line| line.puts new_content }
-
-    expect { require_relative(path) }.to output("\"S\"\n\"U\"\n\"P\"\n\"E\"\n\"R\"\n").to_stdout
+    replace_read_only_value(variable_name: "word", new_value: "Super")
+    output = run_codeblock
+    expect(output).to fuzzy_match("S U P E R")
   end
 end
 ```
-{: .repl-test #spelling_test_1 for="spelling" title="Spelling should print ''S' 'U' 'P' 'E' 'R'' if the input is 'Super'" points="1"}
+{: .codeblock-test #spelling_test_1 for="spelling" title="Spelling should print ''S' 'U' 'P' 'E' 'R'' if the input is 'Super'" points="1"}
 
 ### Even word
 
@@ -149,42 +143,30 @@ Note: be sure to use `pp` to print the output (do not use `p` or `puts`; alterna
 list_of_words = ["zebra", "giraffe", "monkey", "salmon"]
 # write your program here
 ```
-{: .repl #even_words title="Even words" readonly_lines="[1]" points="1"}
+{: .codeblock #even_words title="Even words" readonly_lines="[1]" points="1"}
 
 ```ruby
 describe "Even words" do
   it "should print 'monkey salmon'" do
-    path = "/tmp/code.rb"
-
-    File.foreach(path) do |line|
-      if line.match(/^p.*"monkey"/)
-        expect(line).to_not match(/^p.*"monkey"/),
-          "Expected graded code block to NOT print the String literal 'monkey', but did."
-      end
-    end
-
-    expect { require_relative(path) }.to output("\"monkey\"\n\"salmon\"\n").to_stdout
+    failure_if_literally_printing("monkey")
+    failure_if_literally_printing("salmon")
+    output = run_codeblock
+    expect(output).to fuzzy_match("monkey salmon")
   end
 end
 ```
-{: .repl-test #even_words_test_1 for="even_words" title="Even words should print 'monkey salmon'" points="1"}
+{: .codeblock-test #even_words_test_1 for="even_words" title="Even words should print 'monkey salmon'" points="1"}
 
 ```ruby
 describe "Even words" do
   it "should print nothing if the input is ['odd', 'numbers', 'squad']" do
-    path = "/tmp/code.rb"
-
-    # specify a word
-    file = File.read(path)
-    new_content = file.split("\n")
-    new_content = new_content.map { |line| line == 'list_of_words = ["zebra", "giraffe", "monkey", "salmon"]' ? 'list_of_words = ["odd", "numbers", "squad"]' : line }.join("\n")
-    File.open(path, 'w') { |line| line.puts new_content }
-
-    expect { require_relative(path) }.to output("").to_stdout
+    replace_read_only_value(variable_name: "list_of_words", new_value: ["odd", "numbers", "squad"])
+    output = run_codeblock
+    expect(output).to match("")
   end
 end
 ```
-{: .repl-test #even_words_test_2 for="even_words" title="Even words should print nothing if the input is ['odd', 'numbers', 'squad']" points="1"}
+{: .codeblock-test #even_words_test_2 for="even_words" title="Even words should print nothing if the input is ['odd', 'numbers', 'squad']" points="1"}
 
 ### Letter count
 
@@ -205,41 +187,29 @@ Note: be sure to use `pp` to print the output (do not use `p` or `puts`; alterna
 word = ["photo", "like", "commenter"].sample
 # write your program here
 ```
-{: .repl #letter_count title="Letter count" readonly_lines="[1]" points="1"}
+{: .codeblock #letter_count title="Letter count" readonly_lines="[1]" points="1"}
 
 ```ruby
 describe "Letter count" do
   it "should print the correct output for 'loop'" do
-    path = "/tmp/code.rb"
-
-    # specify a word
-    file = File.read(path)
-    new_content = file.split("\n")
-    new_content = new_content.map { |line| line == 'word = ["photo", "like", "commenter"].sample' ? 'word = "loop"' : line }.join("\n")
-    File.open(path, 'w') { |line| line.puts new_content }
-
-    expect { require_relative(path) }.to output("\"l appears 1 times\"\n\"o appears 2 times\"\n\"o appears 2 times\"\n\"p appears 1 times\"\n").to_stdout
+    replace_read_only_value(variable_name: "word", new_value: "loop")
+    output = run_codeblock
+    expect(output).to fuzzy_match("l appears 1 times o appears 2 times o appears 2 times p appears 1 times")
   end
 end
 ```
-{: .repl-test #letter_count_test_1 for="letter_count" title="Letter count should print the correct output for 'loop'" points="1"}
+{: .codeblock-test #letter_count_test_1 for="letter_count" title="Letter count should print the correct output for 'loop'" points="1"}
 
 ```ruby
 describe "Letter count" do
   it "should print the correct output for 'levee'" do
-    path = "/tmp/code.rb"
-
-    # specify a word
-    file = File.read(path)
-    new_content = file.split("\n")
-    new_content = new_content.map { |line| line == 'word = ["photo", "like", "commenter"].sample' ? 'word = "levee"' : line }.join("\n")
-    File.open(path, 'w') { |line| line.puts new_content }
-
-    expect { require_relative(path) }.to output("\"l appears 1 times\"\n\"e appears 3 times\"\n\"v appears 1 times\"\n\"e appears 3 times\"\n\"e appears 3 times\"\n").to_stdout
+    replace_read_only_value(variable_name: "word", new_value: "levee")
+    output = run_codeblock
+    expect(output).to fuzzy_match("l appears 1 times e appears 3 times v appears 1 times e appears 3 times e appears 3 times")
   end
 end
 ```
-{: .repl-test #letter_count_test_2 for="letter_count" title="Letter count should print the correct output for 'levee'" points="1"}
+{: .codeblock-test #letter_count_test_2 for="letter_count" title="Letter count should print the correct output for 'levee'" points="1"}
 
 ## Sneak peek
 
