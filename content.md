@@ -135,8 +135,6 @@ Now write a program that, given the `list_of_words`, only prints the words that 
 
 Hint: remember you can nest `if`-`else` conditionals inside of loops.
 
-Note: be sure to use `pp` to print the output (do not use `p` or `puts`; alternative printing methods).
-
 ```ruby
 list_of_words = ["zebra", "giraffe", "monkey", "salmon"]
 # write your program here
