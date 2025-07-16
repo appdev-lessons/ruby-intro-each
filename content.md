@@ -179,8 +179,6 @@ Finally, use `.each` to write a program that, given a randomly `sample`d `word` 
 
 Hint: recall, `.split("")` will separate a `String` into an `Array` of characters, and `.count(<character>)` will count the number of occurrences of a given character in a `String`.
 
-Note: be sure to use `pp` to print the output (do not use `p` or `puts`; alternative printing methods).
-
 ```ruby
 word = ["photo", "like", "commenter"].sample
 # write your program here
