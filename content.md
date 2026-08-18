@@ -24,7 +24,7 @@ Therefore, the most common reason we'll have to write loops is to **visit each e
 ```ruby
 # test your knowledge
 ```
-{: .codeblock #testing_arrays title="Test runnable code block"}
+{: .codeblock #testing_arrays title="Test runnable code block" points="1"}
 
 ## Iterating over arrays with Integer's times method
 
