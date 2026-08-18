@@ -21,6 +21,8 @@ Therefore, the most common reason we'll have to write loops is to **visit each e
     - Correct! An `Array` literal, with three `Integer` elements already inside.
 {: .choose_all #arrays title="Array review" points="4" answer="[3,5,6,7]" }
 
+---
+
 ```ruby
 # test your knowledge
 ```
