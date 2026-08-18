@@ -1,24 +1,24 @@
 # Each
 
-When we met the `Array` class, we noted that most of what we do as developers is manage _lists of things_ — photos, likes, followers, reviews, listings, messages, rides, events, concerts, projects, etc etc etc — and `Array` is the data structure that we'll most commonly use to contain these lists.
+When we met the `Array` class, we noted that most of what we do as developers is manage _lists of things_ (photos, likes, followers, reviews, listings, messages, rides, events, concerts, projects, etc etc etc), and `Array` is the data structure that we'll most commonly use to contain these lists.
 
-Therefore, the most common reason we'll have to write loops is to **visit each element in an `Array` and do something interesting with it** — for example, display the element to the user with some formatting around it.
+Therefore, the most common reason we'll have to write loops is to **visit each element in an `Array` and do something interesting with it**: for example, display the element to the user with some formatting around it.
 
 - Quick quiz. Which of these would result in an `Array` class object in the variable `a`? Select all that apply, and use the empty runnable code block below if you want for testing.
 - `a = ()`
-    - No, parentheses are used after a method to list the arguments to the method
+    - No. Parentheses are used after a method to list the arguments to the method; `a = ()` actually leaves `nil` in `a`.
 - `a = Array`
-    - No, what method do we need to call _on_ `Array` to create a new one?
+    - No, that puts the `Array` *class itself* into `a`, not a new instance of it. What method do we need to call _on_ `Array` to create a new one?
 - `a = []`
-    - Yes! Thanks to some syntactic sugar
+    - Correct! Square brackets are the literal syntax for a new, empty `Array`, thanks to some syntactic sugar.
 - `a.new = Array`
-    - No, the method should be on the right side of the assignment operator
+    - No. The method goes on the right side of the assignment operator, called on the class: `a = Array.new`.
 - `a = Array.new`
-    - Yes!
+    - Correct! Calling `.new` on the `Array` class returns a new, empty instance.
 - `a = "ruby".split("")`
-    - Yes! The `""` argument to `split` will separate each character
+    - Correct! The `""` argument to `split` separates each character, returning `["r", "u", "b", "y"]`.
 - `a = [1, 2, 3]`
-    - Yes!
+    - Correct! An `Array` literal, with three `Integer` elements already inside.
 {: .choose_all #arrays title="Array review" points="4" answer="[3,5,6,7]" }
 
 ```ruby
@@ -80,12 +80,12 @@ Nice! `.each` has two clear benefits over using `.times`:
      Then, **we just use that variable directly**, and we don't have to worry about accessing the array with `.at`.
 
 <aside>
-I like to name the variables that contain arrays _plurally_ (e.g. `photos`), and block variables _singularly_ (e.g. `photo`) to make it clear to myself which is which — the list itself versus one element within the list. Whatever you do, don't name the block variable plurally — that's very confusing when you come back to your code later and have to make sense of it.
+I like to name the variables that contain arrays _plurally_ (e.g. `photos`), and block variables _singularly_ (e.g. `photo`) to make it clear to myself which is which: the list itself versus one element within the list. Whatever you do, don't name the block variable plurally; that's very confusing when you come back to your code later and have to make sense of it.
 </aside>
 
 The hardest part, I think, is getting your head around the block variable; in this case, `|the_word|`. It takes some practice.
 
-Try to remember that it's just a name that _we make up_, and `.each` takes care of putting each element in that variable for us behind the scenes. I could have called it `zebra` if I wanted to; there's nothing special about the name of the variable — in particular, it doesn't have to match the name of the variable containing the array (`words`). Just try to pick something descriptive of an individual element in the list.
+Try to remember that it's just a name that _we make up_, and `.each` takes care of putting each element in that variable for us behind the scenes. I could have called it `zebra` if I wanted to; there's nothing special about the name of the variable; in particular, it doesn't have to match the name of the variable containing the array (`words`). Just try to pick something descriptive of an individual element in the list.
 
 ## Practice using each
 
@@ -115,23 +115,23 @@ word = ["Ruby", "application", "zebra"].sample
 
 ```ruby
 describe "Spelling" do
-  it "should print ''S' 'U' 'P' 'E' 'R'' if the input is 'Super'" do
+  it "should print 'S' 'U' 'P' 'E' 'R' if the input is 'Super'" do
     replace_read_only_value(variable_name: "word", new_value: "Super")
     output = run_codeblock
     expect(output).to fuzzy_match("S U P E R")
   end
 end
 ```
-{: .codeblock-test #spelling_test_1 for="spelling" title="Spelling should print ''S' 'U' 'P' 'E' 'R'' if the input is 'Super'" points="1"}
+{: .codeblock-test #spelling_test_1 for="spelling" title="Spelling should print 'S' 'U' 'P' 'E' 'R' if the input is 'Super'" points="1"}
 
-### Even word
+### Even words
 
 Now write a program that, given the `list_of_words`, only prints the words that have an even number of characters. For example, if the list was `["mountain", "pink", "vines"]`, the output should be:
 
 ```
 "mountain"
 "pink"
-``` 
+```
 
 Hint: remember you can nest `if`-`else` conditionals inside of loops.
 
@@ -158,7 +158,7 @@ describe "Even words" do
   it "should print nothing if the input is ['odd', 'numbers', 'squad']" do
     replace_read_only_value(variable_name: "list_of_words", new_value: ["odd", "numbers", "squad"])
     output = run_codeblock
-    expect(output).to match("")
+    expect(output).to fuzzy_match("")
   end
 end
 ```
@@ -173,7 +173,7 @@ Finally, use `.each` to write a program that, given a randomly `sample`d `word` 
 "o appears 2 times"
 "o appears 2 times"
 "p appears 1 times"
-``` 
+```
 
 Hint: recall, `.split("")` will separate a `String` into an `Array` of characters, and `.count(<character>)` will count the number of occurrences of a given character in a `String`.
 
@@ -221,9 +221,9 @@ Just a sneak peek as to why `.each` is so important to get comfortable with: soo
 <% end %>
 ```
 
-Code like this is what drives the dozens of dynamic applications you interact with on a daily basis — we pull a list of records from a database table, then we loop over them, and then we format each one using some _markup language_ (in this case HTML for the browser, but it could be XML for native apps, etc).
+Code like this is what drives the dozens of dynamic applications you interact with on a daily basis: we pull a list of records from a database table, then we loop over them, and then we format each one using some _markup language_ (in this case HTML for the browser, but it could be XML for native apps, etc).
 
-##  Conclusion
+## Conclusion
 
 That's it for `.each` and loops. It's time to meet a very important data structure class that we will be seeing a lot: `Hash`.
 
