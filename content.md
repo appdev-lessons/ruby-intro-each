@@ -6,19 +6,19 @@ Therefore, the most common reason we'll have to write loops is to **visit each e
 
 - Quick quiz. Which of these would result in an `Array` class object in the variable `a`? Select all that apply, and use the empty runnable code block below if you want for testing.
 - `a = ()`
-    - No. Parentheses are used after a method to list the arguments to the method; `a = ()` actually leaves `nil` in `a`.
+    - Not quite. Parentheses are used after a method to list the arguments to the method; `a = ()` leaves `nil` in `a`.
 - `a = Array`
-    - No, that puts the `Array` *class itself* into `a`, not a new instance of it. What method do we need to call _on_ `Array` to create a new one?
+    - Close! That puts the `Array` *class itself* into `a`, not a new instance of it. What method do we need to call _on_ `Array` to create a new one?
 - `a = []`
-    - Correct! Square brackets are the literal syntax for a new, empty `Array`, thanks to some syntactic sugar.
+    - Yes! Square brackets are the literal syntax for a new, empty `Array`, thanks to some syntactic sugar.
 - `a.new = Array`
-    - No. The method goes on the right side of the assignment operator, called on the class: `a = Array.new`.
+    - The method goes on the right side of the assignment operator, called on the class: `a = Array.new`.
 - `a = Array.new`
-    - Correct! Calling `.new` on the `Array` class returns a new, empty instance.
+    - That's right! Calling `.new` on the `Array` class returns a new, empty instance.
 - `a = "ruby".split("")`
-    - Correct! The `""` argument to `split` separates each character, returning `["r", "u", "b", "y"]`.
+    - Right! The `""` argument to `split` separates each character, returning `["r", "u", "b", "y"]`.
 - `a = [1, 2, 3]`
-    - Correct! An `Array` literal, with three `Integer` elements already inside.
+    - Yes! This is an `Array` literal, with three `Integer` elements already inside.
 {: .choose_all #arrays title="Array review" points="4" answer="[3,5,6,7]" }
 
 ---
